@@ -16,6 +16,8 @@ import java.util.*;
 public class CargoTrackingViewAdapterTest extends TestCase {
 
   public void testCreate() {
+    TimeZone.setDefault(TimeZone.getTimeZone("GMT"));
+      
     Cargo cargo = new Cargo(new TrackingId("XYZ"), new RouteSpecification(HANGZOU, HELSINKI, new Date()));
 
     List<HandlingEvent> events = new ArrayList<HandlingEvent>();
@@ -42,21 +44,21 @@ public class CargoTrackingViewAdapterTest extends TestCase {
     CargoTrackingViewAdapter.HandlingEventViewAdapter event = it.next();
     assertEquals("RECEIVE", event.getType());
     assertEquals("Hangzhou", event.getLocation());
-    assertEquals("1970-01-01 01:00", event.getTime());
+    assertEquals("1970-01-01 12:00", event.getTime());
     assertEquals("", event.getVoyageNumber());
     assertTrue(event.isExpected());
 
     event = it.next();
     assertEquals("LOAD", event.getType());
     assertEquals("Hangzhou", event.getLocation());
-    assertEquals("1970-01-01 01:00", event.getTime());
+    assertEquals("1970-01-01 12:00", event.getTime());
     assertEquals("CM001", event.getVoyageNumber());
     assertTrue(event.isExpected());
 
     event = it.next();
     assertEquals("UNLOAD", event.getType());
     assertEquals("Helsinki", event.getLocation());
-    assertEquals("1970-01-01 01:00", event.getTime());
+    assertEquals("1970-01-01 12:00", event.getTime());
     assertEquals("CM001", event.getVoyageNumber());
     assertTrue(event.isExpected());
   }
