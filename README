@@ -1,0 +1,14 @@
+Run Locally:
+
+$ mvn package
+$ java -jar target/dependency/jetty-runner.jar target/*.war
+
+Run on Heroku:
+
+$ heroku create
+$ git push heroku master
+$ heroku open
+
+
+For more info see:
+https://devcenter.heroku.com/articles/deploy-a-java-web-application-that-launches-with-jetty-runner
