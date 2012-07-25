@@ -10,7 +10,7 @@ import java.util.Properties;
  * and used by us (booking and tracking team).
  *
  */
-public interface GraphTraversalService extends Remote {
+public interface GraphTraversalService {
 
   /**
    * @param originUnLocode origin UN Locode

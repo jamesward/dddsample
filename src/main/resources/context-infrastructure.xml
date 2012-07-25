@@ -15,9 +15,8 @@
     <property name="voyageRepository" ref="voyageRepository"/>
   </bean>
 
-  <bean id="graphTraversalService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
-    <property name="serviceUrl" value="rmi://localhost:1099/PathFinder"/>
-    <property name="serviceInterface" value="com.pathfinder.api.GraphTraversalService"/>
+  <bean id="graphTraversalService" class="com.pathfinder.internal.GraphTraversalServiceImpl">
+    <constructor-arg ref="graphDAO"/>
   </bean>
 
 </beans>

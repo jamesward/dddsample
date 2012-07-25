@@ -9,10 +9,12 @@
        For convenience purposes, it is run as a separate webapp (separate dispatcher servlet)
        from the rest of the application, inside the same JVM, but still using RMI. -->
 
+  <!--
   <bean id="remoteBookingService" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
     <property name="serviceUrl" value="rmi://localhost:1099/BookingService"/>
     <property name="serviceInterface" value="se.citerus.dddsample.interfaces.booking.facade.BookingServiceFacade"/>
   </bean>
+  -->
 
   <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
     <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
@@ -23,7 +25,7 @@
   </bean>
 
   <bean name="/*" class="se.citerus.dddsample.interfaces.booking.web.CargoAdminController">
-    <property name="bookingServiceFacade" ref="remoteBookingService"/>
+    <property name="bookingServiceFacade" ref="bookingServiceFacade"/>
   </bean>
 
 </beans>

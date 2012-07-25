@@ -10,10 +10,12 @@
 
   <bean id="graphDAO" class="com.pathfinder.internal.GraphDAO"/>
 
+  <!--
   <bean id="rmiGraphTraversalService" class="org.springframework.remoting.rmi.RmiServiceExporter">
     <property name="serviceInterface" value="com.pathfinder.api.GraphTraversalService"/>
     <property name="service" ref="internalGraphTraversalService"/>
     <property name="serviceName" value="PathFinder"/>
   </bean>
+  -->
 
 </beans>

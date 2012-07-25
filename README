@@ -6,7 +6,7 @@ $ java -jar target/dependency/jetty-runner.jar target/*.war
 Run on Heroku:
 
 $ heroku create
-$ git push heroku master
+$ git push heroku 1_1_x:master
 $ heroku open
 
 
